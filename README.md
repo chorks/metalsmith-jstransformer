@@ -23,9 +23,12 @@ If you are using the command-line version of Metalsmith, you can install via npm
 ```json
 {
   "plugins": {
-    "metalsmith-jstransformer": [
-      "jade"
-    ]
+    "metalsmith-jstransformer": {
+      dot: true, // micromatch options
+      jade: {
+        // jade options
+      }
+    }
   }
 }
 ```
@@ -38,9 +41,12 @@ If you are using the JS Api for Metalsmith, then you can require the module and 
 ```js
 var jstransformer = require('metalsmith-jstransformer');
 
-metalsmith.use(jstransformer([
-  'jade'
-]));
+metalsmith.use(jstransformer({
+  dot: true, // micromatch options
+  matchBase: true,
+  jade: {}, // jade options
+  handlebars: {} // handlebars options + .version for which version to install
+}));
 ```
 
 ## Options

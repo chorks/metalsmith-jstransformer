@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/RobLoach/metalsmith-jstransformer",
   "dependencies": {
+    "extend-shallow": "^1.1.2",
     "jstransformer": "~0.0.2",
-    "minimatch": "^2.0.4"
+    "micromatch": "^2.1.5"
   },
   "devDependencies": {
     "jstransformer-jade": "~0.0.3",

@@ -5,9 +5,13 @@ var Metalsmith = require('metalsmith')
 describe('metalsmith-jstransformer', function () {
   it('should process index.html.jade', function (done) {
     Metalsmith('test/fixtures/basic')
-      .use(jstransformer([
-        'jade'
-      ]))
+      .use(jstransformer({
+        dot: true,
+        matchBase: true,
+        rework: {
+          whitespace: true
+        }
+      }))
       .build(function(err) {
         if (err) return done(err)
         assertDir('test/fixtures/basic/expected', 'test/fixtures/basic/build')
